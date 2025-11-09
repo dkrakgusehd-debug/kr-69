@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="토토톡(TotoTalk) 공식 페이지로 안전하게 이동하세요. 현재 페이지는 Cloudflare Pages를 통해 보호되고 있습니다." />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="robots" content="noindex, nofollow" />
+<title>토토톡(TotoTalk) 이동 안내</title>
+
+<style>
+:root {
+  --bg: #08040e;
+  --card: rgba(255,255,255,.06);
+  --fg: #f5ecff;
+  --muted: rgba(255,255,255,.7);
+  --accent1: #c97aff;
+  --accent2: #8a3bff;
+  --accent3: #ff9cff;
+  --radius: 22px;
+  --shadow: 0 10px 40px rgba(0,0,0,.55);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: radial-gradient(1200px 900px at 50% -20%, #2a184b 0%, #0b0516 55%, #030108 100%);
+  color: var(--fg);
+  display: grid;
+  place-items: center;
+  font-family: 'Pretendard', 'Noto Sans KR', system-ui, sans-serif;
+}
+canvas#bg {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 0;
+}
+main.wrap {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 92vw);
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: var(--radius);
+  backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: var(--shadow), 0 0 25px rgba(160,80,255,.18);
+  text-align: center;
+  padding: clamp(28px, 5vw, 44px);
+  animation: fadeIn 1.2s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.logo {
+  font-size: clamp(26px, 3.2vw, 34px);
+  font-weight: 900;
+  color: var(--accent3);
+  text-shadow: 0 0 15px rgba(201,122,255,.5);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  background: rgba(201,122,255,.12);
+  border: 1px solid rgba(201,122,255,.35);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #edd9ff;
+  margin-bottom: 18px;
+}
+h1 {
+  font-size: clamp(22px, 3vw, 32px);
+  margin-bottom: 14px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-shadow: 0 0 12px rgba(180,120,255,.35);
+}
+p.lead {
+  color: var(--muted);
+  margin-bottom: 30px;
+  font-size: clamp(14px, 2vw, 17px);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 18px 26px;
+  font-weight: 800;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent3));
+  color: #13081b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(14px, 2.2vw, 17px);
+  cursor: pointer;
+  box-shadow: 0 6px 25px rgba(201,122,255,.35), inset 0 1px 0 rgba(255,255,255,.2);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 30px rgba(201,122,255,.5);
+}
+.btn:active { transform: translateY(0); filter: brightness(.9); }
+.url-preview {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 14px;
+  border: 1px dashed rgba(255,255,255,.2);
+  border-radius: 10px;
+  background: rgba(255,255,255,.05);
+  font-size: 12px;
+  color: #e0cfff;
+  word-break: break-all;
+}
+.meta {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<main class="wrap" role="main">
+  <div class="logo">💜 TotoTalk</div>
+  <div class="badge">🔒 이동 전 보안 확인 중</div>
+  <h1>공식 토토톡(TotoTalk.net) 페이지로 이동합니다.</h1>
+  <p class="lead">아래 버튼을 눌러 새 탭에서 안전하게 토토톡으로 이동하세요.</p>
+
+  <a id="goBtn" class="btn"
+     href="#"
+     rel="nofollow noopener noreferrer"
+     target="_blank"
+     data-href="https://tototalk.net/">
+     💜 토토톡 입장하기
+  </a>
+
+  <div id="preview" class="url-preview"></div>
+  <p class="meta">※ 현재 페이지 정보는 목적지에 전달되지 않습니다.</p>
+
+  <noscript>
+    <p class="meta">자바스크립트가 비활성화되어 있습니다. 아래 링크를 직접 눌러 이동하세요.</p>
+    <p><a href="https://tototalk.net/" target="_blank" rel="nofollow noopener noreferrer">https://tototalk.net/</a></p>
+  </noscript>
+</main>
+
+<script>
+(function() {
+  const btn = document.getElementById('goBtn');
+  const preview = document.getElementById('preview');
+  const params = new URLSearchParams(window.location.search);
+  const redirectUrl = params.get('to') || btn.dataset.href;
+
+  try {
+    const validUrl = new URL(redirectUrl);
+    preview.textContent = validUrl.href;
+    btn.href = validUrl.href;
+  } catch(e) {
+    preview.textContent = '잘못된 URL입니다.';
+    btn.removeAttribute('href');
+    btn.style.filter = 'grayscale(1)';
+    btn.style.cursor = 'not-allowed';
+  }
+
+  setTimeout(() => {
+    if (btn.href && btn.href !== '#') {
+      window.open(btn.href, '_blank', 'noopener,noreferrer');
+    }
+  }, 3000);
+})();
+</script>
+</body>
+</html>
